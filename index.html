@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaTech | Premium Frontend</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="logo">NovaTech</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="controls">
+                <button id="modeToggle" aria-label="toggle mode">🌗</button>
+                <button class="menu" id="menuBtn" aria-label="menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal fade" id="home">
+        <h1>Build Stunning Websites</h1>
+        <p>Premium frontend development with animations & smooth UX</p>
+        <button class="btn">Get Started</button>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services reveal slide-up" id="services">
+        <h2>Our Services</h2>
+
+        <div class="service-box">
+            <div class="card reveal scale">
+                <h3>UI Design</h3>
+                <p>Modern & responsive interfaces.</p>
+            </div>
+
+            <div class="card reveal scale">
+                <h3>Frontend Development</h3>
+                <p>Clean HTML, CSS & JavaScript.</p>
+            </div>
+
+            <div class="card reveal scale">
+                <h3>Optimization</h3>
+                <p>Fast loading & smooth experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact reveal slide-up" id="contact">
+        <h2>Contact Us</h2>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+            <p class="success" id="successMsg">Message sent successfully ✅</p>
+        </form>
+    </section>
+
+    <!-- Scroll To Top -->
+    <button id="scrollTop">↑</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

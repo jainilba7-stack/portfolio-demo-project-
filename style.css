@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    transition: filter 0.4s ease;
+}
+
+/* LIGHT MODE (brightness only) */
+body.light {
+    filter: brightness(1.15);
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: backdrop-filter 0.3s;
+}
+
+.header.scrolled {
+    backdrop-filter: blur(12px);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: cyan;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+#modeToggle,
+.menu {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg, cyan, magenta);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.btn {
+    padding: 14px 40px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(45deg, cyan, magenta);
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px cyan;
+}
+
+/* SECTIONS */
+.services,
+.contact {
+    padding: 100px 60px;
+    text-align: center;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+/* FORM */
+.contact form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.success {
+    display: none;
+    color: lightgreen;
+}
+
+/* SCROLL TO TOP */
+#scrollTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* SCROLL ANIMATIONS */
+.reveal {
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+.slide-up {
+    transform: translateY(50px);
+}
+
+.slide-up.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.scale {
+    transform: scale(0.8);
+}
+
+.scale.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .menu {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
